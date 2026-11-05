@@ -1,73 +1,19 @@
-DROP TABLE IF EXISTS `generos`;
-
-CREATE TABLE `generos` (
-  `idgenero` int NOT NULL AUTO_INCREMENT,
-  `genero` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idgenero`)
+CREATE TABLE `companhias` (
+  `idcompanhia` int NOT NULL AUTO_INCREMENT,
+  `companhia` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idcompanhia`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+DROP TABLE IF EXISTS `avioes`;
 
-LOCK TABLES `generos` WRITE;
-
-INSERT INTO `generos` VALUES (1,'Rock'),(2,'Metal'),(3,'Pagode'),(4,'Gospel'),(5,'Funk');
-
-UNLOCK TABLES;
-
-DROP TABLE IF EXISTS `bandas`;
-
-CREATE TABLE `bandas` (
-  `idbandas` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(45) DEFAULT NULL,
-  `integrantes` int DEFAULT NULL,
-  `ranking` int DEFAULT NULL,
-  `fk_genero` int DEFAULT NULL,
-  PRIMARY KEY (`idbandas`),
-  KEY `genero_idx` (`fk_genero`),
-  CONSTRAINT `genero` FOREIGN KEY (`fk_genero`) REFERENCES `generos` (`idgenero`)
+CREATE TABLE `avioes` (
+  `idaviao` int NOT NULL AUTO_INCREMENT,
+  `modelo` varchar(45) DEFAULT NULL,
+  `capacidade` int DEFAULT NULL,
+  `anoFabricacao` int DEFAULT NULL,
+  `fk_companhia` int DEFAULT NULL,
+  PRIMARY KEY (`idaviao`),
+  KEY `companhia_idx` (`fk_companhia`),
+  CONSTRAINT `companhia` FOREIGN KEY (`fk_companhia`)
+  REFERENCES `companhias` (`idcompanhia`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-
-
-LOCK TABLES `bandas` WRITE;
-
-INSERT INTO `bandas` VALUES (1,'Skank',5,1,1),(2,'Metallica',4,1,1);
-
-UNLOCK TABLES;
-
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insereBanda`(nome varchar(45), 
-                                   integrantes int, ranking int, genero int)
-BEGIN
-INSERT INTO `bandas`
-(`nome`,
-`integrantes`,
-`ranking`,
-`fk_genero`)
-VALUES
-(nome,
-integrantes,
-ranking,
-genero);
-END ;;
-DELIMITER ;
-
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_listaBandas`()
-BEGIN
-     SELECT 
-        b.idbandas, 
-        b.nome, 
-        b.ranking, 
-        g.genero
-    FROM bandas b
-    INNER JOIN generos g 
-        ON g.idgenero = b.fk_genero;
-END ;;
-DELIMITER ;
-
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_listaGeneros`()
-BEGIN
-   select * from generos;
-END;;
-DELIMITER ;
