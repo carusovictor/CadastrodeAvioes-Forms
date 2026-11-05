@@ -83,6 +83,21 @@ namespace SistemaCadastro
 
         private void BtnConfirmaCadastro_Click(object sender, EventArgs e)
         {
+            ConectaBanco con = new ConectaBanco();
+            Aviao novoAviao = new Aviao();
+            novoAviao.Modelo = txtmodelo.Text;
+            novoAviao.Capacidade = Convert.ToInt32(txtcapacidade.Text);
+            novoAviao.Fabricacao = Convert.ToInt32(txtfabricacao.Text);
+            novoAviao.Companhia = 31;
+            bool retorno = con.insereAviao(novoAviao);
+            if (retorno == false)
+                MessageBox.Show(con.mensagem);
+            
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
         }
     }
