@@ -34,5 +34,80 @@ namespace SistemaCadastro
                 return false;
             }
         }
+
+        public DataTable listaCompanhias()
+        {
+            // comentario
+            MySqlCommand cmd = new MySqlCommand("sp_listaCompanhias", conexao);
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                conexao.Open();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable tabela = new DataTable();
+                da.Fill(tabela);
+                return tabela;
+            }// fim try
+            catch (MySqlException e)
+            {
+                mensagem = "Erro:" + e.Message;
+                return null;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+        }// fim lista_generos
+
+        public ConectaBanco()
+        {
+
+        }
+
+        public DataTable listaModelos()
+        {
+            MySqlCommand cmd = new MySqlCommand("sp_listaAviao", conexao);
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                conexao.Open();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable tabela = new DataTable();
+                da.Fill(tabela);
+                return tabela;
+            }// fim try
+            catch (MySqlException e)
+            {
+                mensagem = "Erro:" + e.Message;
+                return null;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public bool deletaAviao(int idremovebanda)
+        {
+            MySqlCommand cmd = new MySqlCommand("sp_removeAviao", conexao);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("idavioes", idremovebanda);
+            try
+            {
+                conexao.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }// fim try
+            catch (MySqlException e)
+            {
+                mensagem = "Erro:" + e.Message;
+                return false;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
     }
 }

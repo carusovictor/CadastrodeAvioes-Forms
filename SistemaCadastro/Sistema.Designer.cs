@@ -52,10 +52,10 @@
             this.lblmodelo = new System.Windows.Forms.Label();
             this.tabBuscar = new System.Windows.Forms.TabPage();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnRemoveBanda = new System.Windows.Forms.Button();
+            this.btnRemoveModelo = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtBusca = new System.Windows.Forms.TextBox();
-            this.dgBandas = new System.Windows.Forms.DataGridView();
+            this.dgModelos = new System.Windows.Forms.DataGridView();
             this.tabAlterar = new System.Windows.Forms.TabPage();
             this.cbAlteraGenero = new System.Windows.Forms.ComboBox();
             this.txtAlteraRanking = new System.Windows.Forms.TextBox();
@@ -75,7 +75,7 @@
             this.tabControl1.SuspendLayout();
             this.tabCadastrar.SuspendLayout();
             this.tabBuscar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgBandas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgModelos)).BeginInit();
             this.tabAlterar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -350,10 +350,10 @@
             // 
             this.tabBuscar.BackColor = System.Drawing.Color.White;
             this.tabBuscar.Controls.Add(this.btnAlterar);
-            this.tabBuscar.Controls.Add(this.btnRemoveBanda);
+            this.tabBuscar.Controls.Add(this.btnRemoveModelo);
             this.tabBuscar.Controls.Add(this.label5);
             this.tabBuscar.Controls.Add(this.txtBusca);
-            this.tabBuscar.Controls.Add(this.dgBandas);
+            this.tabBuscar.Controls.Add(this.dgModelos);
             this.tabBuscar.Location = new System.Drawing.Point(4, 34);
             this.tabBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabBuscar.Name = "tabBuscar";
@@ -381,33 +381,33 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
-            // btnRemoveBanda
+            // btnRemoveModelo
             // 
-            this.btnRemoveBanda.FlatAppearance.BorderSize = 0;
-            this.btnRemoveBanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveBanda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnRemoveBanda.ForeColor = System.Drawing.Color.DimGray;
-            this.btnRemoveBanda.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveBanda.Image")));
-            this.btnRemoveBanda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemoveBanda.Location = new System.Drawing.Point(544, 8);
-            this.btnRemoveBanda.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnRemoveBanda.Name = "btnRemoveBanda";
-            this.btnRemoveBanda.Size = new System.Drawing.Size(183, 70);
-            this.btnRemoveBanda.TabIndex = 14;
-            this.btnRemoveBanda.Text = "Remover";
-            this.btnRemoveBanda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemoveBanda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRemoveBanda.UseVisualStyleBackColor = true;
-            this.btnRemoveBanda.Click += new System.EventHandler(this.btnRemoveBanda_Click);
+            this.btnRemoveModelo.FlatAppearance.BorderSize = 0;
+            this.btnRemoveModelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnRemoveModelo.ForeColor = System.Drawing.Color.DimGray;
+            this.btnRemoveModelo.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveModelo.Image")));
+            this.btnRemoveModelo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemoveModelo.Location = new System.Drawing.Point(544, 8);
+            this.btnRemoveModelo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRemoveModelo.Name = "btnRemoveModelo";
+            this.btnRemoveModelo.Size = new System.Drawing.Size(183, 70);
+            this.btnRemoveModelo.TabIndex = 14;
+            this.btnRemoveModelo.Text = "Remover";
+            this.btnRemoveModelo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemoveModelo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRemoveModelo.UseVisualStyleBackColor = true;
+            this.btnRemoveModelo.Click += new System.EventHandler(this.btnRemoveModelo_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(39, 20);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 25);
+            this.label5.Size = new System.Drawing.Size(83, 25);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Banda:";
+            this.label5.Text = "Modelo:";
             // 
             // txtBusca
             // 
@@ -419,19 +419,19 @@
             this.txtBusca.TabIndex = 1;
             this.txtBusca.TextChanged += new System.EventHandler(this.txtBusca_TextChanged);
             // 
-            // dgBandas
+            // dgModelos
             // 
-            this.dgBandas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgBandas.BackgroundColor = System.Drawing.Color.White;
-            this.dgBandas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgBandas.Location = new System.Drawing.Point(63, 85);
-            this.dgBandas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgBandas.Name = "dgBandas";
-            this.dgBandas.ReadOnly = true;
-            this.dgBandas.RowHeadersWidth = 51;
-            this.dgBandas.RowTemplate.Height = 29;
-            this.dgBandas.Size = new System.Drawing.Size(897, 291);
-            this.dgBandas.TabIndex = 0;
+            this.dgModelos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgModelos.BackgroundColor = System.Drawing.Color.White;
+            this.dgModelos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgModelos.Location = new System.Drawing.Point(63, 85);
+            this.dgModelos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgModelos.Name = "dgModelos";
+            this.dgModelos.ReadOnly = true;
+            this.dgModelos.RowHeadersWidth = 51;
+            this.dgModelos.RowTemplate.Height = 29;
+            this.dgModelos.Size = new System.Drawing.Size(897, 291);
+            this.dgModelos.TabIndex = 0;
             // 
             // tabAlterar
             // 
@@ -612,7 +612,7 @@
             this.tabCadastrar.PerformLayout();
             this.tabBuscar.ResumeLayout(false);
             this.tabBuscar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgBandas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgModelos)).EndInit();
             this.tabAlterar.ResumeLayout(false);
             this.tabAlterar.PerformLayout();
             this.ResumeLayout(false);
@@ -642,11 +642,11 @@
         private System.Windows.Forms.Panel marcador;
         private System.Windows.Forms.Label lblfabricacao;
         
-        private System.Windows.Forms.DataGridView dgBandas;
+        private System.Windows.Forms.DataGridView dgModelos;
         private System.Windows.Forms.Label lblMensagem;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtBusca;
-        private System.Windows.Forms.Button btnRemoveBanda;
+        private System.Windows.Forms.Button btnRemoveModelo;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.TabPage tabAlterar;
         private System.Windows.Forms.TextBox txtAlteraRanking;
