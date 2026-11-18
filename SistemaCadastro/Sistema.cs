@@ -13,7 +13,7 @@ namespace SistemaCadastro
 {
     public partial class Sistema : Form
     {
-
+        int idAlterar;
         public Sistema()
         {
             InitializeComponent();
@@ -76,19 +76,44 @@ namespace SistemaCadastro
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            
+            int linha = dgModelos.CurrentRow.Index;// pega a linha selecionada
+            idAlterar = Convert.ToInt32(
+              dgModelos.Rows[linha].Cells["idaviao"].Value.ToString());
+            txtAlteraModelo.Text =
+                 dgModelos.Rows[linha].Cells["modelo"].Value.ToString();
+            txtAlteraCapacidade.Text =
+                dgModelos.Rows[linha].Cells["capacidade"].Value.ToString();
+            txtAlteraFabricacao.Text =
+                dgModelos.Rows[linha].Cells["anoFabricacao"].Value.ToString();
+            cbAlteraCompanhia.Text =
+                dgModelos.Rows[linha].Cells["companhia"].Value.ToString();
+            tabControl1.SelectedTab = tabAlterar;// muda aba
         }
 
          private void btnConfirmaAlteracao_Click(object sender, EventArgs e)
         {
-           
+            ConectaBanco con = new ConectaBanco();
+            Aviao novoAviao = new Aviao();
+            novoAviao.Modelo = txtAlteraModelo.Text;
+            novoAviao.Capacidade = Convert.ToInt32(txtAlteraCapacidade.Text);
+            novoAviao.Fabricacao = Convert.ToInt32(txtAlteraFabricacao.Text);
+            novoAviao.Companhia = Convert.ToInt32(cbAlteraCompanhia.SelectedValue.ToString());
+            bool retorno = con.alteraAviao(novoAviao, idAlterar);
+            if (retorno == false)
+                MessageBox.Show(con.mensagem);
+            else
+                MessageBox.Show("Alteração realizada com sucesso!");
+            
+            listagridModelos();
 
 
         }
 
         private void bntAddGenero_Click(object sender, EventArgs e)
         {
-          
+            FrmAddCompanhia formCompanhia = new FrmAddCompanhia();
+            this.Hide();
+            formCompanhia.ShowDialog(); 
         }
 
         private void BtnConfirmaCadastro_Click(object sender, EventArgs e)
@@ -140,9 +165,18 @@ namespace SistemaCadastro
             cbCompanhia.DataSource = tabelaDados;
             cbCompanhia.DisplayMember = "companhia";
             cbCompanhia.ValueMember = "idcompanhia";
+
+            cbAlteraCompanhia.DataSource = tabelaDados;
+            cbAlteraCompanhia.DisplayMember = "companhia";
+            cbAlteraCompanhia.ValueMember = "idcompanhia";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }
