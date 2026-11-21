@@ -1,34 +1,55 @@
-# Cadastro de Aviões
+#  Sistema de Cadastro de Aviões
 
-Projeto desenvolvido em C# com Windows Forms e MySQL para praticar a criação de formulários e a integração com banco de dados.
+Aplicação desktop desenvolvida em **C# e Windows Forms**, com banco de dados **MySQL**, para cadastrar e gerenciar aviões e companhias aéreas.
 
-A proposta é ter um sistema simples para cadastrar aviões e relacioná-los às companhias aéreas. O programa permite consultar os dados cadastrados e fazer alterações nos registros.
+##  Objetivo
 
-## Funcionalidades
+Projeto acadêmico criado para praticar interfaces gráficas, programação em C# e operações de cadastro, consulta, edição e exclusão (CRUD) com banco de dados.
 
-- Cadastro de aviões com modelo, capacidade, ano de fabricação e companhia aérea;
-- Consulta dos aviões cadastrados;
-- Alteração e exclusão de registros;
+##  Funcionalidades
+
+- Login de usuário;
+- Cadastro de aviões (modelo, capacidade, ano de fabricação e companhia aérea);
+- Consulta e busca de aviões;
+- Edição e exclusão de registros;
 - Cadastro de companhias aéreas.
 
-## Tecnologias utilizadas
+##  Tecnologias
 
-- C# e Windows Forms
-- MySQL e MySQL Workbench
-- Visual Studio
-- Biblioteca MySql.Data para conexão com o banco
+**C#**, **Windows Forms**, **.NET Framework 4.7.2**, **MySQL** e **Visual Studio**.
 
-## Banco de dados
+## 💻 Instalação e execução
 
-O banco utilizado é o `banco_siscadastro`, com as tabelas `avioes` e `companhias`. Cada avião fica associado a uma companhia por meio do campo `fk_companhia`.
+1. Instale o **Visual Studio** (com suporte a desenvolvimento desktop .NET) e o **MySQL Server**.
+2. Clone o repositório:
+   ```bash
+   git clone https://github.com/carusovictor/CadastrodeAvioes-Forms.git
+   ```
+3. No MySQL, crie o banco `banco_siscadastro` e importe o arquivo `DumpBancoCadastro.sql`.
+4. Configure as *stored procedures* e a autenticação usadas pelo sistema. **Atenção:** esses scripts não estão incluídos no arquivo SQL do repositório.
+5. Ajuste usuário e senha do MySQL em `SistemaCadastro/ConectaBanco.cs` (não publique credenciais reais).
+6. Abra `SistemaCadastro.sln` no Visual Studio, restaure os pacotes se necessário e pressione **F5** para executar.
 
-O arquivo `DumpBancoCadastro.sql` contém a estrutura das tabelas. As stored procedures utilizadas pelo programa precisam ser configuradas no MySQL separadamente.
+##  Capturas de tela
 
-## Como executar
+### Tela de login
 
-1. Ter o Visual Studio e o MySQL instalados.
-2. Criar o banco `banco_siscadastro` e executar o arquivo `DumpBancoCadastro.sql` nele.
-3. Configurar as stored procedures e os dados de conexão com o MySQL.
-4. Abrir `SistemaCadastro.sln` no Visual Studio e executar o projeto.
+> <img width="397" height="216" alt="image" src="https://github.com/user-attachments/assets/908c62f1-e540-4956-b7d2-a5443a1dea80" />
 
-Este projeto foi feito como atividade de aprendizagem, principalmente para praticar operações de cadastro, consulta, alteração e exclusão usando C# e banco de dados.
+
+### Cadastro de aviões
+
+> <img width="620" height="326" alt="image" src="https://github.com/user-attachments/assets/d02d95f0-774c-413a-9200-e996d285762d" />
+
+
+### Consulta e busca
+
+> <img width="617" height="325" alt="image" src="https://github.com/user-attachments/assets/afea1578-fe82-4d46-91d3-945941941be4" />
+
+
+### Cadastro de companhias
+
+> <img width="398" height="218" alt="image" src="https://github.com/user-attachments/assets/efba489e-94a9-4a91-80b2-b94fc18ed3b7" />
+
+
+Projeto acadêmico de graduação.
