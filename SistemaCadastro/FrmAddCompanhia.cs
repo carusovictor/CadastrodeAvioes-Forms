@@ -53,5 +53,10 @@ namespace SistemaCadastro
             this.Close();
             formSistema.Show();
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

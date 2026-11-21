@@ -169,5 +169,15 @@
   <ItemGroup>
     <None Include="Resources\images.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\alaska.png" />
+    <Content Include="Resources\american.jpg" />
+    <Content Include="Resources\azul.png" />
+    <Content Include="Resources\britishairways.png" />
+    <Content Include="Resources\emirates.png" />
+    <Content Include="Resources\enter %281%29.png" />
+    <Content Include="Resources\latam.jpg" />
+    <Content Include="Resources\pilot.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
