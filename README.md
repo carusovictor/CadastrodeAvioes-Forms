@@ -4,7 +4,7 @@ Aplicação desktop desenvolvida em **C# e Windows Forms**, com banco de dados *
 
 ##  Objetivo
 
-Projeto acadêmico criado para praticar interfaces gráficas, programação em C# e operações de cadastro, consulta, edição e exclusão (CRUD) com banco de dados.
+Projeto acadêmico criado para praticar programação em C# e operações de cadastro, consulta, edição e exclusão (CRUD) com banco de dados.
 
 ##  Funcionalidades
 
@@ -27,8 +27,7 @@ Projeto acadêmico criado para praticar interfaces gráficas, programação em C
    ```
 3. No MySQL, crie o banco `banco_siscadastro` e importe o arquivo `DumpBancoCadastro.sql`.
 4. Configure as *stored procedures* e a autenticação usadas pelo sistema. **Atenção:** esses scripts não estão incluídos no arquivo SQL do repositório.
-5. Ajuste usuário e senha do MySQL em `SistemaCadastro/ConectaBanco.cs` (não publique credenciais reais).
-6. Abra `SistemaCadastro.sln` no Visual Studio, restaure os pacotes se necessário e pressione **F5** para executar.
+5. Ajuste usuário e senha do MySQL em `SistemaCadastro/ConectaBanco.cs`.
 
 ##  Capturas de tela
 
